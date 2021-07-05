@@ -1,0 +1,182 @@
+html, body {
+    font-size: 14px;
+    position: relative;
+    height: 100%;
+}
+
+@keyframes header-animation {
+    from { bottom: 3rem; }
+    to { bottom: 0rem; }
+  }
+
+@keyframes notification-animation {
+    from { 
+        padding: 0;
+        opacity: 0;
+        height: 0;
+    }
+    to { 
+        padding: 20px;
+        opacity: 1;
+        height: 40px;
+    }
+  }
+
+header {
+    position: relative;
+    background-color: #f8f9fc;
+    padding: 0 5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    animation-name: header-animation;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+.image img {
+    height: 3rem;
+}
+
+.profile {
+    height: 100%;
+    position: relative;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile i {
+    color: #868686;
+    cursor: pointer;
+}
+
+.profile img {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.drop-down {
+    position: relative;
+    cursor: pointer;
+}
+
+.drop-down label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#show-menu {
+    opacity: 0;
+    position: absolute;
+    display: none;
+}
+
+#show-menu:checked + .drop {
+    visibility: visible;
+}
+
+.drop {
+    position: absolute;
+    top: 3rem;
+    right: 10px;
+    width: 180px; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 10pt;
+    background-color: white;
+    border: 1px solid rgb(182, 181, 178);
+    visibility: hidden;
+}
+
+.drop li {
+    padding: 10px 20px;
+}
+
+.drop li:hover {
+    background-color: rgb(218, 216, 216);
+}
+
+.name {
+    color: grey;
+}
+
+.name::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 1px;
+    background:grey;
+    top: 33px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40rem;
+}
+
+main img {
+    height: 15rem;
+}
+
+.notification-bar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.notification {
+    border-radius: 5%;
+    padding: 20px;
+    margin: 20px;
+    width: 175px;
+}
+
+.notification > i {
+    float: left;
+    display: block;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.error {
+    color: white;
+    background-color: rgb(163, 36, 36); 
+}
+
+.success {
+    color: white;
+    background-color: rgb(13, 102, 13);
+}
+
+.warning {
+    color: white;
+    background-color: rgb(240, 137, 20);
+    padding: 0;
+    opacity: 0;
+    height: 0;
+    animation-name: notification-animation;
+    animation-duration: 0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
